@@ -1,0 +1,93 @@
+[2020-06-03 09:43:13,700] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 09:43:13,714] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 09:43:13,714] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 09:43:13,714] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 09:43:13,714] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 09:43:13,729] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): status_of_upload> on 2020-05-31T21:00:00+00:00
+[2020-06-03 09:43:13,732] {standard_task_runner.py:53} INFO - Started process 10077 to run task
+[2020-06-03 09:43:13,792] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [running]> nineleaps
+[2020-06-03 09:43:15,150] {taskinstance.py:1128} ERROR - 400 No matching signature for operator = for argument types: DATE, INT64. Supported signatures: ANY = ANY at [1:76]
+
+(job ID: 4e32cc55-3729-41a5-bc88-31ca35526e9c)
+
+                                 -----Query Job SQL Follows-----                                 
+
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+   1:select count(*) from apache-279104.apache_airflow_test.covid_dataset where Date = 2020-05-31
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/airflow/models/taskinstance.py", line 966, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/nineleaps/airflow/dags/covid_data.py", line 60, in check_upload_status
+    result = query_job.result()
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/cloud/bigquery/job.py", line 3196, in result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/cloud/bigquery/job.py", line 818, in result
+    return super(_AsyncJob, self).result(timeout=timeout)
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/api_core/future/polling.py", line 130, in result
+    raise self._exception
+BadRequest: 400 No matching signature for operator = for argument types: DATE, INT64. Supported signatures: ANY = ANY at [1:76]
+
+(job ID: 4e32cc55-3729-41a5-bc88-31ca35526e9c)
+
+                                 -----Query Job SQL Follows-----                                 
+
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+   1:select count(*) from apache-279104.apache_airflow_test.covid_dataset where Date = 2020-05-31
+    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |
+[2020-06-03 09:43:15,153] {taskinstance.py:1151} INFO - Marking task as UP_FOR_RETRY
+[2020-06-03 09:43:23,691] {logging_mixin.py:112} INFO - [2020-06-03 09:43:23,691] {local_task_job.py:103} INFO - Task exited with return code 1
+[2020-06-03 10:02:47,723] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:02:47,736] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:02:47,736] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:02:47,736] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 10:02:47,736] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:02:47,756] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): status_of_upload> on 2020-05-31T21:00:00+00:00
+[2020-06-03 10:02:47,761] {standard_task_runner.py:53} INFO - Started process 12723 to run task
+[2020-06-03 10:02:47,824] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [running]> nineleaps
+[2020-06-03 10:02:51,669] {logging_mixin.py:112} INFO - (0, 'big query result')
+[2020-06-03 10:02:51,670] {logging_mixin.py:112} INFO - (37, 'csv rows')
+[2020-06-03 10:02:51,670] {logging_mixin.py:112} INFO - 0 + is uploaded.........
+[2020-06-03 10:02:51,671] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 10:02:51,681] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=status_of_upload, execution_date=20200531T210000, start_date=20200603T043247, end_date=20200603T043251
+[2020-06-03 10:02:57,709] {logging_mixin.py:112} INFO - [2020-06-03 10:02:57,709] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-03 10:10:22,256] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:10:22,269] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:10:22,270] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:10:22,270] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 10:10:22,270] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:10:22,285] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): status_of_upload> on 2020-05-31T21:00:00+00:00
+[2020-06-03 10:10:22,288] {standard_task_runner.py:53} INFO - Started process 13665 to run task
+[2020-06-03 10:10:22,372] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [running]> nineleaps
+[2020-06-03 10:10:26,761] {logging_mixin.py:112} INFO - (36, 'big query result')
+[2020-06-03 10:10:26,762] {logging_mixin.py:112} INFO - (37, 'csv rows')
+[2020-06-03 10:10:26,762] {logging_mixin.py:112} INFO - 97 + is uploaded.........
+[2020-06-03 10:10:26,763] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 10:10:26,772] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=status_of_upload, execution_date=20200531T210000, start_date=20200603T044022, end_date=20200603T044026
+[2020-06-03 10:10:32,244] {logging_mixin.py:112} INFO - [2020-06-03 10:10:32,244] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-03 10:53:49,496] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:53:49,512] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [queued]>
+[2020-06-03 10:53:49,512] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:53:49,512] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 10:53:49,512] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 10:53:49,526] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): status_of_upload> on 2020-05-31T21:00:00+00:00
+[2020-06-03 10:53:49,529] {standard_task_runner.py:53} INFO - Started process 18775 to run task
+[2020-06-03 10:53:49,582] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.status_of_upload 2020-05-31T21:00:00+00:00 [running]> nineleaps
+[2020-06-03 10:53:53,770] {logging_mixin.py:112} INFO - (36, 'big query result')
+[2020-06-03 10:53:53,771] {logging_mixin.py:112} INFO - (37, 'csv rows')
+[2020-06-03 10:53:53,771] {logging_mixin.py:112} INFO - 97 % is uploaded.........
+[2020-06-03 10:53:53,771] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 10:53:53,777] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=status_of_upload, execution_date=20200531T210000, start_date=20200603T052349, end_date=20200603T052353
+[2020-06-03 10:53:59,480] {logging_mixin.py:112} INFO - [2020-06-03 10:53:59,479] {local_task_job.py:103} INFO - Task exited with return code 0

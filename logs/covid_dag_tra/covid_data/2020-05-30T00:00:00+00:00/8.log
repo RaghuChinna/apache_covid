@@ -1,0 +1,23 @@
+[2020-06-02 18:05:05,489] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 18:05:05,499] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 18:05:05,499] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 18:05:05,500] {taskinstance.py:867} INFO - Starting attempt 8 of 9
+[2020-06-02 18:05:05,500] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 18:05:05,517] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-02 18:05:05,522] {standard_task_runner.py:53} INFO - Started process 6089 to run task
+[2020-06-02 18:05:05,594] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-02 18:05:05,975] {taskinstance.py:1128} ERROR - string indices must be integers
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/airflow/models/taskinstance.py", line 966, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/nineleaps/airflow/dags/airflow_1.py", line 64, in get_covid_data
+    csv_writer.writerow([context['execution_date'], i['State UT'], i[str(context['execution_date'].split('T')[0])]])
+TypeError: string indices must be integers
+[2020-06-02 18:05:05,976] {taskinstance.py:1151} INFO - Marking task as UP_FOR_RETRY
+[2020-06-02 18:05:15,476] {logging_mixin.py:112} INFO - [2020-06-02 18:05:15,475] {local_task_job.py:103} INFO - Task exited with return code 1

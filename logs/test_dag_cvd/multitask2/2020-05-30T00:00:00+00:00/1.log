@@ -1,0 +1,28 @@
+[2020-06-01 20:21:28,143] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-01 20:21:28,154] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-01 20:21:28,154] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 20:21:28,154] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-01 20:21:28,154] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 20:21:28,172] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): multitask2> on 2020-05-30T00:00:00+00:00
+[2020-06-01 20:21:28,174] {standard_task_runner.py:53} INFO - Started process 15090 to run task
+[2020-06-01 20:21:28,246] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-01 20:21:28,256] {logging_mixin.py:112} INFO - Hello-World
+[2020-06-01 20:21:28,256] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-01 20:21:28,259] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=test_dag_cvd, task_id=multitask2, execution_date=20200530T000000, start_date=20200601T145128, end_date=20200601T145128
+[2020-06-01 20:21:38,129] {logging_mixin.py:112} INFO - [2020-06-01 20:21:38,129] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-01 20:36:15,942] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-01 20:36:15,954] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-01 20:36:15,954] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 20:36:15,954] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-01 20:36:15,954] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 20:36:15,970] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): multitask2> on 2020-05-30T00:00:00+00:00
+[2020-06-01 20:36:15,972] {standard_task_runner.py:53} INFO - Started process 16776 to run task
+[2020-06-01 20:36:16,025] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: test_dag_cvd.multitask2 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-01 20:36:16,035] {logging_mixin.py:112} INFO - Hello-World
+[2020-06-01 20:36:16,035] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-01 20:36:16,038] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=test_dag_cvd, task_id=multitask2, execution_date=20200530T000000, start_date=20200601T150615, end_date=20200601T150616
+[2020-06-01 20:36:25,928] {logging_mixin.py:112} INFO - [2020-06-01 20:36:25,927] {local_task_job.py:103} INFO - Task exited with return code 0

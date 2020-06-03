@@ -1,0 +1,70 @@
+[2020-06-03 08:00:34,194] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:00:34,207] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:00:34,207] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:00:34,207] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:00:34,207] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:00:34,223] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): big_query> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:00:34,230] {standard_task_runner.py:53} INFO - Started process 28110 to run task
+[2020-06-03 08:00:34,293] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:00:34,302] {logging_mixin.py:112} INFO - Dataset(DatasetReference(u'apache-279104', 'apache_airflow_pipeline'))
+[2020-06-03 08:00:34,303] {logging_mixin.py:112} INFO - loading into dataset
+[2020-06-03 08:00:41,133] {logging_mixin.py:112} INFO - creating dataset
+[2020-06-03 08:00:41,562] {taskinstance.py:1128} ERROR - 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/apache-279104/datasets: Already Exists: Dataset apache-279104:apache_airflow_pipeline
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/airflow/models/taskinstance.py", line 966, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/nineleaps/airflow/dags/covid_data.py", line 52, in load_into_big_query
+    client.create_dataset(dataset)
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/cloud/bigquery/client.py", line 461, in create_dataset
+    retry, method="POST", path=path, data=data, timeout=timeout
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/cloud/bigquery/client.py", line 556, in _call_api
+    return call()
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/api_core/retry.py", line 286, in retry_wrapped_func
+    on_error=on_error,
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/api_core/retry.py", line 184, in retry_target
+    return target()
+  File "/home/nineleaps/.local/lib/python2.7/site-packages/google/cloud/_http.py", line 423, in api_request
+    raise exceptions.from_http_response(response)
+Conflict: 409 POST https://bigquery.googleapis.com/bigquery/v2/projects/apache-279104/datasets: Already Exists: Dataset apache-279104:apache_airflow_pipeline
+[2020-06-03 08:00:41,568] {taskinstance.py:1151} INFO - Marking task as UP_FOR_RETRY
+[2020-06-03 08:00:44,175] {logging_mixin.py:112} INFO - [2020-06-03 08:00:44,175] {local_task_job.py:103} INFO - Task exited with return code 1
+[2020-06-03 08:24:34,607] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:24:34,621] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:24:34,621] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:24:34,621] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:24:34,621] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:24:34,636] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): big_query> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:24:34,639] {standard_task_runner.py:53} INFO - Started process 31448 to run task
+[2020-06-03 08:24:34,688] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:24:34,699] {logging_mixin.py:112} INFO - Dataset(DatasetReference(u'apache-279104', 'apache_airflow_pipeline'))
+[2020-06-03 08:24:34,700] {logging_mixin.py:112} INFO - loading into dataset
+[2020-06-03 08:24:36,623] {logging_mixin.py:112} INFO - creating dataset
+[2020-06-03 08:24:45,101] {logging_mixin.py:112} INFO - Loaded 36 rows into apache_airflow_pipeline:covid_dataset.
+[2020-06-03 08:24:45,102] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 08:24:45,116] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=big_query, execution_date=20200530T000000, start_date=20200603T025434, end_date=20200603T025445
+[2020-06-03 08:24:49,633] {logging_mixin.py:112} INFO - [2020-06-03 08:24:49,632] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-03 08:29:12,947] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:29:12,956] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:29:12,956] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:29:12,956] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:29:12,956] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:29:12,973] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): big_query> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:29:12,976] {standard_task_runner.py:53} INFO - Started process 32043 to run task
+[2020-06-03 08:29:13,054] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:29:13,066] {logging_mixin.py:112} INFO - Dataset(DatasetReference(u'apache-279104', 'apache_airflow_pipeline'))
+[2020-06-03 08:29:13,066] {logging_mixin.py:112} INFO - loading into dataset
+[2020-06-03 08:29:14,796] {logging_mixin.py:112} INFO - creating dataset
+[2020-06-03 08:29:24,838] {logging_mixin.py:112} INFO - Loaded 36 rows into apache_airflow_pipeline:covid_dataset.
+[2020-06-03 08:29:24,838] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 08:29:24,850] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=big_query, execution_date=20200530T000000, start_date=20200603T025912, end_date=20200603T025924
+[2020-06-03 08:29:27,977] {logging_mixin.py:112} INFO - [2020-06-03 08:29:27,976] {local_task_job.py:103} INFO - Task exited with return code 0

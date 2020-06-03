@@ -1,0 +1,16 @@
+[2020-06-03 08:01:49,007] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:01:49,018] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:01:49,018] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:01:49,018] {taskinstance.py:867} INFO - Starting attempt 2 of 3
+[2020-06-03 08:01:49,018] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:01:49,034] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): big_query> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:01:49,037] {standard_task_runner.py:53} INFO - Started process 28279 to run task
+[2020-06-03 08:01:49,100] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.big_query 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:01:49,114] {logging_mixin.py:112} INFO - Dataset(DatasetReference(u'apache-279104', 'apache_airflow_pipeline'))
+[2020-06-03 08:01:49,115] {logging_mixin.py:112} INFO - loading into dataset
+[2020-06-03 08:01:55,595] {logging_mixin.py:112} INFO - Loaded 147 rows into apache_airflow_pipeline:covid_dataset.
+[2020-06-03 08:01:55,595] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 08:01:55,600] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=big_query, execution_date=20200530T000000, start_date=20200603T023149, end_date=20200603T023155
+[2020-06-03 08:01:58,993] {logging_mixin.py:112} INFO - [2020-06-03 08:01:58,992] {local_task_job.py:103} INFO - Task exited with return code 0

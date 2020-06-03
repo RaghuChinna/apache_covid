@@ -1,0 +1,12 @@
+[2020-06-01 21:28:20,858] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: example_branch_dop_operator_v3.dummy_task_2 2020-05-30T00:03:00+00:00 [queued]>
+[2020-06-01 21:28:20,875] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: example_branch_dop_operator_v3.dummy_task_2 2020-05-30T00:03:00+00:00 [queued]>
+[2020-06-01 21:28:20,875] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 21:28:20,875] {taskinstance.py:867} INFO - Starting attempt 1 of 1
+[2020-06-01 21:28:20,875] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 21:28:20,889] {taskinstance.py:887} INFO - Executing <Task(DummyOperator): dummy_task_2> on 2020-05-30T00:03:00+00:00
+[2020-06-01 21:28:20,892] {standard_task_runner.py:53} INFO - Started process 23286 to run task
+[2020-06-01 21:28:20,943] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: example_branch_dop_operator_v3.dummy_task_2 2020-05-30T00:03:00+00:00 [running]> nineleaps
+[2020-06-01 21:28:20,954] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=example_branch_dop_operator_v3, task_id=dummy_task_2, execution_date=20200530T000300, start_date=20200601T155820, end_date=20200601T155820
+[2020-06-01 21:28:30,838] {logging_mixin.py:112} INFO - [2020-06-01 21:28:30,837] {local_task_job.py:103} INFO - Task exited with return code 0

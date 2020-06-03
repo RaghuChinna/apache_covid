@@ -1,0 +1,91 @@
+[2020-06-02 14:44:39,251] {logging_mixin.py:112} INFO - Sending to executor.
+[2020-06-02 14:44:39,252] {logging_mixin.py:112} INFO - [2020-06-02 14:44:39,251] {base_executor.py:58} INFO - Adding to queue: ['airflow', 'run', 'covid_dag', 'covid_data', '2020-05-30T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', 'DAGS_FOLDER/covid_data.py']
+[2020-06-02 14:44:39,252] {logging_mixin.py:112} INFO - [2020-06-02 14:44:39,252] {sequential_executor.py:45} INFO - Executing command: ['airflow', 'run', 'covid_dag', 'covid_data', '2020-05-30T00:00:00+00:00', '--local', '--pool', 'default_pool', '-sd', 'DAGS_FOLDER/covid_data.py']
+[2020-06-02 14:44:40,945] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [None]>
+[2020-06-02 14:44:40,953] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [None]>
+[2020-06-02 14:44:40,953] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 14:44:40,954] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-02 14:44:40,954] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 14:44:40,972] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-02 14:44:40,974] {standard_task_runner.py:53} INFO - Started process 12399 to run task
+[2020-06-02 14:44:41,051] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-02 14:44:42,198] {logging_mixin.py:112} INFO - csv loaded successfully.
+[2020-06-02 14:44:42,199] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-02 14:44:42,201] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=covid_data, execution_date=20200530T000000, start_date=20200602T091440, end_date=20200602T091442
+[2020-06-02 14:44:50,940] {logging_mixin.py:112} INFO - [2020-06-02 14:44:50,940] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-03 08:16:25,228] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:16:25,236] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:16:25,237] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:16:25,237] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:16:25,237] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:16:25,253] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:16:25,256] {standard_task_runner.py:53} INFO - Started process 30215 to run task
+[2020-06-03 08:16:25,313] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:16:25,847] {taskinstance.py:1128} ERROR - string indices must be integers
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/airflow/models/taskinstance.py", line 966, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/nineleaps/airflow/dags/covid_data.py", line 69, in get_covid_data
+    csv_writer.writerow([context['execution_date'], i['State UT'], i[str(context['execution_date']).split('T')[0]]])
+TypeError: string indices must be integers
+[2020-06-03 08:16:25,850] {taskinstance.py:1151} INFO - Marking task as UP_FOR_RETRY
+[2020-06-03 08:16:35,225] {logging_mixin.py:112} INFO - [2020-06-03 08:16:35,224] {local_task_job.py:103} INFO - Task exited with return code 1
+[2020-06-03 08:22:41,408] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:22:41,415] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:22:41,416] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:22:41,416] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:22:41,416] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:22:41,433] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:22:41,436] {standard_task_runner.py:53} INFO - Started process 31148 to run task
+[2020-06-03 08:22:41,494] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:22:41,915] {taskinstance.py:1128} ERROR - string indices must be integers
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/airflow/models/taskinstance.py", line 966, in _run_raw_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 113, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python2.7/dist-packages/airflow/operators/python_operator.py", line 118, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/nineleaps/airflow/dags/covid_data.py", line 68, in get_covid_data
+    csv_writer.writerow([context['execution_date'], i['State UT'], i[str(context['execution_date']).split('T')[0]]])
+TypeError: string indices must be integers
+[2020-06-03 08:22:41,918] {taskinstance.py:1151} INFO - Marking task as UP_FOR_RETRY
+[2020-06-03 08:22:51,395] {logging_mixin.py:112} INFO - [2020-06-03 08:22:51,394] {local_task_job.py:103} INFO - Task exited with return code 1
+[2020-06-03 08:24:07,574] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:24:07,581] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:24:07,582] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:24:07,582] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:24:07,582] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:24:07,599] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:24:07,603] {standard_task_runner.py:53} INFO - Started process 31367 to run task
+[2020-06-03 08:24:07,738] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:24:11,312] {logging_mixin.py:112} INFO - csv loaded successfully.
+[2020-06-03 08:24:11,313] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 08:24:11,325] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=covid_data, execution_date=20200530T000000, start_date=20200603T025407, end_date=20200603T025411
+[2020-06-03 08:24:17,560] {logging_mixin.py:112} INFO - [2020-06-03 08:24:17,559] {local_task_job.py:103} INFO - Task exited with return code 0
+[2020-06-03 08:28:45,964] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:28:45,970] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-03 08:28:45,970] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:28:45,970] {taskinstance.py:867} INFO - Starting attempt 1 of 3
+[2020-06-03 08:28:45,971] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-03 08:28:45,988] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-03 08:28:45,990] {standard_task_runner.py:53} INFO - Started process 31988 to run task
+[2020-06-03 08:28:46,039] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-03 08:28:49,796] {logging_mixin.py:112} INFO - csv loaded successfully.
+[2020-06-03 08:28:49,797] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-03 08:28:49,801] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag, task_id=covid_data, execution_date=20200530T000000, start_date=20200603T025845, end_date=20200603T025849
+[2020-06-03 08:28:55,960] {logging_mixin.py:112} INFO - [2020-06-03 08:28:55,959] {local_task_job.py:103} INFO - Task exited with return code 0

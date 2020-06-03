@@ -1,0 +1,16 @@
+[2020-06-01 21:28:09,126] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: example_branch_dop_operator_v3.condition 2020-05-30T00:04:00+00:00 [queued]>
+[2020-06-01 21:28:09,149] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: example_branch_dop_operator_v3.condition 2020-05-30T00:04:00+00:00 [queued]>
+[2020-06-01 21:28:09,149] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 21:28:09,149] {taskinstance.py:867} INFO - Starting attempt 1 of 1
+[2020-06-01 21:28:09,149] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-01 21:28:09,167] {taskinstance.py:887} INFO - Executing <Task(BranchPythonOperator): condition> on 2020-05-30T00:04:00+00:00
+[2020-06-01 21:28:09,170] {standard_task_runner.py:53} INFO - Started process 23250 to run task
+[2020-06-01 21:28:09,258] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: example_branch_dop_operator_v3.condition 2020-05-30T00:04:00+00:00 [running]> nineleaps
+[2020-06-01 21:28:09,274] {logging_mixin.py:112} INFO - ------------- exec dttm = 2020-05-30T00:04:00+00:00 and minute = 4
+[2020-06-01 21:28:09,274] {python_operator.py:114} INFO - Done. Returned value was: dummy_task_1
+[2020-06-01 21:28:09,275] {skipmixin.py:78} INFO - Following branch dummy_task_1
+[2020-06-01 21:28:09,278] {skipmixin.py:101} INFO - Skipping tasks ['dummy_task_2']
+[2020-06-01 21:28:09,302] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=example_branch_dop_operator_v3, task_id=condition, execution_date=20200530T000400, start_date=20200601T155809, end_date=20200601T155809
+[2020-06-01 21:28:19,106] {logging_mixin.py:112} INFO - [2020-06-01 21:28:19,105] {local_task_job.py:103} INFO - Task exited with return code 0

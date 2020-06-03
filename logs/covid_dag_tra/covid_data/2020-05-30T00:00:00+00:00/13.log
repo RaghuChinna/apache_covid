@@ -1,0 +1,15 @@
+[2020-06-02 18:22:58,837] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 18:22:58,847] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 18:22:58,847] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 18:22:58,847] {taskinstance.py:867} INFO - Starting attempt 13 of 15
+[2020-06-02 18:22:58,848] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 18:22:58,866] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-02 18:22:58,868] {standard_task_runner.py:53} INFO - Started process 8661 to run task
+[2020-06-02 18:22:58,937] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-02 18:23:01,941] {logging_mixin.py:112} INFO - csv loaded successfully.
+[2020-06-02 18:23:01,942] {logging_mixin.py:112} INFO - 2020-05-30T00:00:00+00:00
+[2020-06-02 18:23:01,944] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-02 18:23:01,959] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag_tra, task_id=covid_data, execution_date=20200530T000000, start_date=20200602T125258, end_date=20200602T125301
+[2020-06-02 18:23:08,820] {logging_mixin.py:112} INFO - [2020-06-02 18:23:08,819] {local_task_job.py:103} INFO - Task exited with return code 0

@@ -1,0 +1,19 @@
+[2020-06-02 14:44:21,339] {logging_mixin.py:112} INFO - Sending to executor.
+[2020-06-02 14:44:21,339] {logging_mixin.py:112} INFO - [2020-06-02 14:44:21,339] {base_executor.py:58} INFO - Adding to queue: ['airflow', 'run', 'covid_dag_tra', 'covid_data', '2020-05-30T00:00:00+00:00', '--local', '--pool', u'default_pool', '-sd', 'DAGS_FOLDER/airflow_1.py']
+[2020-06-02 14:44:21,339] {logging_mixin.py:112} INFO - [2020-06-02 14:44:21,339] {sequential_executor.py:45} INFO - Executing command: ['airflow', 'run', 'covid_dag_tra', 'covid_data', '2020-05-30T00:00:00+00:00', '--local', '--pool', u'default_pool', '-sd', 'DAGS_FOLDER/airflow_1.py']
+[2020-06-02 14:44:22,696] {taskinstance.py:649} INFO - Dependencies not met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [success]>, dependency 'Task Instance State' FAILED: Task is in the 'success' state which is not a valid state for execution. The task must be cleared in order to be run.
+[2020-06-02 14:44:22,696] {logging_mixin.py:112} INFO - [2020-06-02 14:44:22,696] {local_task_job.py:91} INFO - Task is not able to be run
+[2020-06-02 14:49:25,926] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 14:49:25,933] {taskinstance.py:655} INFO - Dependencies all met for <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [queued]>
+[2020-06-02 14:49:25,933] {taskinstance.py:866} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 14:49:25,933] {taskinstance.py:867} INFO - Starting attempt 2 of 4
+[2020-06-02 14:49:25,933] {taskinstance.py:868} INFO - 
+--------------------------------------------------------------------------------
+[2020-06-02 14:49:25,949] {taskinstance.py:887} INFO - Executing <Task(PythonOperator): covid_data> on 2020-05-30T00:00:00+00:00
+[2020-06-02 14:49:25,951] {standard_task_runner.py:53} INFO - Started process 13095 to run task
+[2020-06-02 14:49:26,022] {logging_mixin.py:112} INFO - Running %s on host %s <TaskInstance: covid_dag_tra.covid_data 2020-05-30T00:00:00+00:00 [running]> nineleaps
+[2020-06-02 14:49:27,219] {logging_mixin.py:112} INFO - csv loaded successfully.
+[2020-06-02 14:49:27,219] {python_operator.py:114} INFO - Done. Returned value was: None
+[2020-06-02 14:49:27,223] {taskinstance.py:1048} INFO - Marking task as SUCCESS.dag_id=covid_dag_tra, task_id=covid_data, execution_date=20200530T000000, start_date=20200602T091925, end_date=20200602T091927
+[2020-06-02 14:49:35,919] {logging_mixin.py:112} INFO - [2020-06-02 14:49:35,918] {local_task_job.py:103} INFO - Task exited with return code 0
